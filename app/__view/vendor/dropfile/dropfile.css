@@ -1,0 +1,20 @@
+.dropfile-area {
+	position:relative;
+	border:1px dashed #ccc;
+}
+.dropfile-area.is-active {
+	background-color: #eee;
+}
+
+.dropfile {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	cursor: pointer;
+	opacity: 0;
+	&:focus {
+		outline: none;
+	}
+}

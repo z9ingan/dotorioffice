@@ -1,0 +1,61 @@
+html, body{margin:0; background-color:#FFF;}
+.print-header,
+.print-header-space {height:62px;}
+.print-header-height {height: 40px;}
+.print-footer,
+.print-footer-space {height:62px;}
+.print-footer-height {height: 40px;}
+.print-header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color:#FFF;
+}
+.print-footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color:#FFF;
+}
+.print-content{
+	margin: 0 auto;
+}
+.print-header-line{
+	/*border-top:2px solid #000;*/
+	background-color:#FFF;
+}
+.print-footer-line{
+	/*border-bottom:2px solid #000;*/
+	background-color:#FFF;
+}
+.print-blank-out{height:15px;}
+.print-blank{height:5px;}
+
+.page {
+	page-break-after: always;
+}
+
+body {font-family: 'Noto Sans KR', sans-serif;}
+.font-serif{font-family: 'Noto Serif KR', serif;}
+.font-cursive{font-family: 'Gaegu', cursive;}
+
+/* TABLE VERTICAL ALIGN */
+.table-align-top th,
+.table-align-top td{vertical-align:top !important;}
+.table-align-middle th,
+.table-align-middle td{vertical-align:middle !important;}
+.table-align-bottom th,
+.table-align-bottom td{vertical-align:bottom !important;}
+
+/* 부트스트랩 수정 */
+.table-bordered th,
+.table-bordered td,
+.table-bordered thead,
+.table-bordered tbody,
+.table-bordered tfoot{border-color:#000 !important;}
+
+@media print {
+   thead {display: table-header-group;} 
+   tfoot {display: table-footer-group;}
+   body {margin: 0;}
+}

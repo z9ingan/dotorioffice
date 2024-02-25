@@ -1,0 +1,76 @@
+/* 변수 선언 */
+:root{
+	--dotori-header-height: 5rem;
+	--dotori-header-mobile-height: 3rem;
+	--dotori-header-width: 220px;
+	--dotori-subnav-width: 220px;
+	--dotori-subcontent-width: 300px;
+}
+
+/* 레이아웃 시작 */
+html, body{overflow-x:hidden; height:100%;}
+#dotori-wrapper{min-height:100%;}
+#dotori-logo{height:var(--dotori-header-height);}
+#dotori-header{height:var(--dotori-header-mobile-height);}
+@media (min-width:992px){
+	#dotori-wrapper{margin-left:var(--dotori-header-width) !important;}
+	#dotori-header{height:var(--dotori-header-height);}
+	#dotori-nav{
+		position:fixed;
+		top:0;
+		bottom:0;
+		left:0;
+		width:var(--dotori-header-width);
+		height:100%;
+		overflow-y:auto;
+		align-items:flex-start;
+		border-right: 1px solid #dee2e6 !important;
+		border-bottom:0;
+	}
+	#dotori-nav .offcanvas{width:var(--dotori-header-width) !important;}
+	#dotori-sub-nav{width:var(--dotori-subnav-width) !important;}
+	#dotori-sub-content{width:var(--dotori-subcontent-width) !important;}
+}
+
+/* 레이아웃 끝 */
+
+/* Tiny Slider */
+.tns-nav {
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	padding-top : 1.5rem;
+	padding-bottom: 1.5rem;
+}
+.tns-nav button {
+    display: block;
+    outline: 0;
+    width: 1.25rem;
+    height: 0.75rem;
+    background-color: #f6f1e9;
+    margin: 0 0.25rem;
+    border: 0;
+    border-radius: 0.35rem;
+}
+.tns-nav button.tns-nav-active {background-color: #4fc9da;}
+/* Tiny Slider 끝 */
+
+/* Cropper JS */
+.img-container img {max-width: 100%;}
+/* Cropper JS 끝 */
+
+/* CKEditor5 */
+.ck.ck-editor {
+    display: flex;
+    flex-direction: column;
+    height: 100% !important;
+}
+.ck.ck-editor__main{height:100%;}
+.ck.ck-editor__editable{height:100%; min-height:500px;}
+/* CKEditor5 끝 */
+
+
+.pointer {cursor:pointer !important;}
+.move {cursor:move !important;}
+.blink {animation: blinker 1s step-start infinite;}
+@keyframes blinker {50% {opacity: 0.5;}}

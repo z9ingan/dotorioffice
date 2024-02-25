@@ -1,0 +1,307 @@
+
+$primary: #4267B2; /* 페이스북의 대표 색상 */
+$font-family-sans-serif: "Noto Sans KR", sans-serif;
+$font-family-base: $font-family-sans-serif;
+$offcanvas-horizontal-width: 300px;
+
+@import "../vendor/bootstrap/scss/bootstrap";
+
+
+/* 재지정 */
+
+.nav-pills{
+	
+	--dotori-nav-pills-hover-bg: #CCC;
+
+	.nav-link{
+		&:active,
+		&:focus,
+		&:hover:not(.active) {
+			background-color: var(--dotori-nav-pills-hover-bg);
+		}
+	}
+}
+
+.nav-collapse {
+	position: relative;
+
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		right: 1rem;
+		height: 0.4rem;
+		width: 0.4rem;
+		border-right: 1px solid #5e6e82;
+		border-bottom: 1px solid #5e6e82;
+		top: 50%;
+		transform: translateY(-50%) rotate(45deg);
+		transition: all 0.2s ease-in-out;
+		transform-origin: center;
+		transition-property: transform, border-color;
+	}
+
+	&.active::after {
+		border-right: 1px solid #ffffff;
+		border-bottom: 1px solid #ffffff;
+	}
+
+	&[aria-expanded="true"]::after {
+		transform: translateY(-50%) rotate(225deg);
+	}
+
+	&-body {
+		margin-left: 1rem;
+	}
+}
+
+.small {
+	font-size: 0.95rem;
+}
+.smaller {
+	font-size: 0.875rem;
+}
+.smallest {
+	font-size: 0.75rem;
+}
+
+.avatar {
+
+	--dotori-avatar-placeholder-bg: #EEE;
+	--dotori-avatar-default-bg: #CCC;
+	--dotori-avatar-name: #000;
+
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+
+	& .avatar-placeholder {
+		background: var(--dotori-avatar-placeholder-bg);
+	}
+
+	& .avatar-name {
+		position: absolute;
+		text-align: center;
+		color: var(--dotori-avatar-name);
+		background-color: var(--dotori-avatar-default-bg);
+		font-weight: bold;
+		text-transform: uppercase;
+		display: block;
+
+		> span {
+			position: absolute;
+			top: 53%;
+			left: 50%;
+			transform: translate3d(-50%, -50%, 0);
+			font-weight: 900 !important;
+		}
+	}
+
+	img {
+		display: block;
+	}
+
+	img, .avatar-name {
+		width: 100%;
+		height: 100%;
+	}
+
+	img {
+		object-fit: cover;
+	}
+
+	&.avatar-1 {
+		height: 1.5rem;
+		width: 1.5rem;
+
+		.avatar-name {
+			font-size: 0.7894736842rem;
+			line-height: 1.2;
+		}
+	}
+
+	&.avatar-2 {
+		height: 2rem;
+		width: 2rem;
+
+		.avatar-name {
+			font-size: 1.0526315789rem;
+			line-height: 1.2;
+		}
+	}
+
+	&.avatar-3 {
+		height: 2.5rem;
+		width: 2.5rem;
+
+		.avatar-name {
+			font-size: 1.3157894737rem;
+			line-height: 1.2;
+		}
+	}
+
+	&.avatar-4 {
+		height: 3rem;
+		width: 3rem;
+
+		.avatar-name {
+			font-size: 1.5789473684rem;
+			line-height: 1.2;
+		}
+	}
+
+	&.avatar-5 {
+		height: 3.5rem;
+		width: 3.5rem;
+
+		.avatar-name {
+			font-size: 1.8421052632rem;
+			line-height: 1.2;
+		}
+	}
+
+	.avatar-group {
+		display: flex;
+		flex-wrap: nowrap;
+
+		.dropdown-toggle:not(:first-child) .avatar-1,
+		.dropdown-toggle:not(:first-child) .avatar-2,
+		.dropdown-toggle:not(:first-child) .avatar-3,
+		.dropdown-toggle:not(:first-child) .avatar-4,
+		.dropdown-toggle:not(:first-child) .avatar-5 {
+			margin-left: -0.5rem;
+		}
+
+		.avatar-1:not(:first-child),
+		.avatar-2:not(:first-child),
+		.avatar-3:not(:first-child),
+		.avatar-4:not(:first-child),
+		.avatar-5:not(:first-child) {
+			margin-left: -0.5rem;
+		}
+	}
+
+	@media (min-width: 992px) {
+		&.avatar-lg-1 {
+			height: 1.5rem;
+			width: 1.5rem;
+
+			.avatar-name {
+				font-size: 0.7894736842rem;
+				line-height: 1.2;
+			}
+		}
+
+		&.avatar-lg-2 {
+			height: 2rem;
+			width: 2rem;
+
+			.avatar-name {
+				font-size: 1.0526315789rem;
+				line-height: 1.2;
+			}
+		}
+
+		&.avatar-lg-3 {
+			height: 2.5rem;
+			width: 2.5rem;
+
+			.avatar-name {
+				font-size: 1.3157894737rem;
+				line-height: 1.2;
+			}
+		}
+
+		&.avatar-lg-4 {
+			height: 3rem;
+			width: 3rem;
+
+			.avatar-name {
+				font-size: 1.5789473684rem;
+				line-height: 1.2;
+			}
+		}
+
+		&.avatar-lg-5 {
+			height: 3.5rem;
+			width: 3.5rem;
+
+			.avatar-name {
+				font-size: 1.8421052632rem;
+				line-height: 1.2;
+			}
+		}
+	}
+}
+
+.sortable-chosen {
+	list-style: none;
+}
+.sortable-ghost .tree-item {
+	border-radius:0.4rem;
+	background-color: rgba(255,255,0,0.3) !important;
+}
+
+.nav-nested {
+
+	--dotori-nav-nested-background: #FFF;
+	--dotori-nav-nested-hover-bg: #CCC;
+	--dotori-nav-nested-line: #666;
+
+	.nav-link {
+		padding-left:0.5rem;
+		padding-right:0.5rem;
+
+		.icon {
+			display: block;
+			width: 1.25rem;
+			text-align: center;
+		}
+		
+		&:not(.active):hover {
+			background-color: var(--dotori-nav-nested-hover-bg);
+		}
+	}
+
+	& .nav-item:last-child:not(:first-child):before,
+	ul .nav-item:last-child:before {
+		background-color: var(--dotori-nav-nested-background);
+		height: auto;
+		bottom: 0;
+		z-index: 1;
+	}
+
+	ul {
+		margin-left: 0.5em;
+		position: relative;
+
+		&:before {
+			content: "";
+			display: block;
+			width: 0;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0.5rem;
+			border-left: 1px solid var(--dotori-nav-nested-line);
+		}
+		.nav-item {
+			margin: 0;
+			padding-left:1em; /* indentation + .5em */
+			position: relative;
+			white-space: nowrap;
+
+			&:before {
+				content: "";
+				display: block;
+				width: 0.5rem; /* same with indentation */
+				height: 0;
+				border-top: 1px solid var(--dotori-nav-nested-line);
+				margin-top: -1px; /* border top width */
+				position: absolute;
+				top: 1.25em; /* (line-height/2) */
+				left: 0.5rem; 
+			}
+		}
+	}
+}
